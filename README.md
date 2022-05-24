@@ -8,7 +8,7 @@ Setting up Energy manager on Industrial Edge Device
     * [b](#b)
 
 ## Overview
-![Overview](files/architecture.jpg)
+![Overview](files/architecture.JPG)
 
 
 ### Setup
@@ -52,6 +52,7 @@ Install the required apps on edge device
 - IE Databus 
 - Energy Manager
 - Data Service
+- flow creator
  
 Setup the network settings  on edge device
   - Give the Edge-Device Port 2 ip adress in range of the OT-South network, for example 192.168.0.11
