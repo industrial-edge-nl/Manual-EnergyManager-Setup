@@ -1,6 +1,6 @@
 # Northbound southbound edge devices
 Setting up Energy manager on Industrial Edge Device
-[Official documentation](https://github.com/industrial-edge/energy-manager-getting-startede)
+[Official documentation](https://github.com/industrial-edge/energy-manager-getting-started)
 
 ## index
 
@@ -113,11 +113,23 @@ Setup the network settings  on edge device
 7. Add child asset to plant : "Energy" 
 ![Dataservice](files/edgedevice-dataservice-2.JPG)
 8. Click on Energy Asset, and add multiple variables
-9. Type in search: "GDB.signals.energy
+9. Type in search: GDB.signals.energy
 10. Select all the 4 tags. and save. > accept.
 
 
 ### Edgedevice - Energy Manager
-
-test
-
+1. Open Energy manager - on edge device
+2. Create KPIs - add new KPI
+![EnergyManager]{files/energymanager-1.JPG}
+    - Create KPI: name KPI_Total_Energy
+        - Unit: Wh
+        - Fill in Formula: operand EnergyFillingTank + Operand EnergyHeatingTank + Operand EnergyFIllingBottles
+![EnergyManage]{files/energymanager-2.JPG}
+    - Create KPI: name KPI_Costs_energy
+        - Unit: $ or euro
+        - Formula: Operand TotalEnergy * constant 0.35
+![EnergyManage]{files/energymanager-3.JPG}
+- Create KPI: name KPI_Costs_Water
+        - Unit: $ or euro
+        - Formula: Operand TotalEnergy * constant 0.21
+![EnergyManage]{files/energymanager-4.JPG}
