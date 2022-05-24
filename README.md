@@ -121,22 +121,22 @@ Setup the network settings  on edge device
 1. Open Energy manager - on edge device
 2. Create KPIs - add new KPI
 
-![EnergyManager]{files/energymanager-1.JPG}
+![EnergyManager](files/energymanager-1.JPG)
 
     - Create KPI: name KPI_Total_Energy
         - Unit: Wh
         - Fill in Formula: operand EnergyFillingTank + Operand EnergyHeatingTank + Operand EnergyFIllingBottles
 
-![EnergyManager2]{files/energymanager-2.JPG}
+![EnergyManager2](files/energymanager-2.JPG)
 
     - Create KPI: name KPI_Costs_energy
         - Unit: $ or euro
         - Formula: Operand TotalEnergy * constant 0.35
 
-![EnergyManager3]{files/energymanager-3.JPG}
+![EnergyManager3](files/energymanager-3.JPG)
 
 - Create KPI: name KPI_Costs_Water
         - Unit: $ or euro
         - Formula: Operand TotalEnergy * constant 0.21
 
-![EnergyManager4]{files/energymanager-4.JPG}
+![EnergyManager4](files/energymanager-4.JPG)
