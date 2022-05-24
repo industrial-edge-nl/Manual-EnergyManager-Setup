@@ -135,7 +135,7 @@ Setup the network settings  on edge device
 
 ![EnergyManager3](files/energymanager-3.JPG)
 
-- Create KPI: name KPI_Costs_Water
+    - Create KPI: name KPI_Costs_Water
         - Unit: $ or euro
         - Formula: Operand TotalEnergy * constant 0.21
 
