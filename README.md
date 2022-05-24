@@ -24,6 +24,7 @@ Setting up Energy manager on Industrial Edge Device
     - IE Databus - Is used as data channel - MQTT broker      
     - SIMATIC S7 Connector - used for data retrieve from plc
     - Energy manager - Dashboarding of energy data  
+    - Flow Creator - Debugging of dataflow
       
 - OT Level PLC
   - [Uses Tia Tank sample application](https://github.com/industrial-edge/miscellaneous#tank-application)
@@ -58,7 +59,7 @@ Setup the network settings  on edge device
   - Give the Edge-Device Port 2 ip adress in range of the OT-South network, for example 192.168.0.11
   - Give the Edge-Device Port 1 ip adress in range of the South-North network, for example 192.168.1.10
 
-### Southbound - Simatic s7 Connector
+### Simatic s7 Connector
 1. Open the Industrial Edge Management - Go to Data Connections - Select the Simatic S7 connector
 ![s7connector1](files/edgedevice-s7-connector-1.JPG)
 2. Launch on the Southbound device - select S7 or OPCUA (we use opcua) - add data Source 
@@ -70,7 +71,7 @@ Setup the network settings  on edge device
 ![s7connector3](files/edgedevice-s7-connector-4-browse.JPG)
 6. Deploy and start project, wait until done.
 
-### Southbound - IE Databus
+### IE Databus
 1. Open the Industrial Edge Management - Go to Data Connections - Select the IE Databus
 2. Launch on the Southbound device 
 3. Add user + 
@@ -78,7 +79,7 @@ Setup the network settings  on edge device
 4. Topic: ie/#, username: edge, password: edge, permission: publish and subscribe, click on add.
 5. Deploy, wait until its done
 
-### Southbound - Flow Creator
+### Flow Creator
 1. open flow creator - on edge device, login with edge credentials 
 2. add mqtt in node
 3. add server: 
@@ -98,18 +99,22 @@ Setup the network settings  on edge device
 
 ### Edgedevice - Dataservice 
 1. Open Dataservice - on edge device.
-2. Go to adapter and add adapter
+2. Go set the adapter, connect the s7 adapter
 ![Dataservice](files/edgedevice-dataservice-1.JPG)
 3. Fill in fields:
-   - name: southbound_Device
+   - name: s7 connector (default)
    - url: tcp://ie-databus:1883
    - name: edge
    - password: edge
-   - metadata: ie/d/j/simatic/v1/ied1:s7c1/dp/
-   ![Dataservice2](files/edgedevice-dataservice-2.JPG)
+   - metadata: ie/d/j/simatic/v1/s7c1/dp/   (default)
 4. Click save
 5. and enable the new adapter, check if it is connected.
-6 ....
+6. Add child asset to edge : "Plant" 
+7. Add child asset to plant : "Energy" 
+![Dataservice](files/edgedevice-dataservice-2.JPG)
+8. Click on Energy Asset, and add multiple variables
+9. Type in search: "GDB.signals.energy
+10. Select all the 4 tags. and save. > accept.
 
 
 ### Edgedevice - Energy Manager
