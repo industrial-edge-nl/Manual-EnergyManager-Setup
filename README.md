@@ -140,3 +140,40 @@ Setup the network settings  on edge device
         - Formula: Operand TotalEnergy * constant 0.21
 
 ![EnergyManager4](files/energymanager-4.JPG)
+
+
+3. Create KPI Instance
+   - Select My plant
+   - go to the Energy - Asset
+   - click on the dropdown and click on parameter
+
+![EnergyManager4](files/energymanager-7.JPG)
+
+   - add new KPI instance
+   - name: INSTANCE_Total_Energy
+   - KPI basis:  On KPI type
+   - KPI Type: KPI_Total_Energy
+   - Connect EnergyFillingTank -> WaterConsumptionFillingTank
+   - Connect EnergyHeatingTank -> ConsumptionHeatingTank
+   - Connect EnergyFillingBottles -> ConsumptionFillingBottles
+
+   ![EnergyManager4](files/energymanager-8.JPG)
+
+3. Open menu > My Plant
+    - open tab > Plant > Energy> create dashboard
+    - give it a name.
+
+![EnergyManager4](files/energymanager-5.JPG)
+
+3.1. Heatmap
+    - select the tab "My Plant"
+    - go to the newly created dashboard
+    - select "Create first widget" to start the wizard
+        - choose the Heatmap widget type > Continue
+        - enter a widget name and set the KPI calculation period to 1 Minute > Continue
+        - click "Select parameter" and choose the KPI instance for 'Total energy' > Continue
+        - no need to change anything in the general display options > Continue
+        - no need to change anything in the Heatmap display options > Finish
+
+![EnergyManager4](files/energymanager-6.JPG)
+
