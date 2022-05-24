@@ -165,7 +165,7 @@ Setup the network settings  on edge device
 
 ![EnergyManager4](files/energymanager-5.JPG)
 
-3.1. Heatmap
+4. Heatmap Option 1
     - select the tab "My Plant"
     - go to the newly created dashboard
     - select "Create first widget" to start the wizard
