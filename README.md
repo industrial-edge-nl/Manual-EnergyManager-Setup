@@ -4,8 +4,18 @@ Setting up Energy manager on Industrial Edge Device
 
 ## index
 
-* [a](#a)
-    * [b](#b)
+* [Overview](#overview)
+  * [Setup](#setup)
+* [Get Started](#get-started)
+  * [Network](#network)
+    * [OT Level](#ot-level)
+    * [Plant Level](#plant-level)
+  * [Apps](#apps)
+    * [Simatic S7 Connector](#simatic-s7-connector)
+    * [IE databus](#ie-databus)
+    * [Flow Creator](#flow-creator)
+    * [Energy Manager](#energy-manager)
+
 
 ## Overview
 ![Overview](files/architecture.JPG)
@@ -31,7 +41,7 @@ Setting up Energy manager on Industrial Edge Device
 
 # Get started
 
-## Networks
+## Network
   - PLANT-USER network 192.168.1.x/24 range
   - PLANT-OT network 192.168.0.x/24 range  
   - Devices:
@@ -43,9 +53,10 @@ Setting up Energy manager on Industrial Edge Device
     - MYPC :
       - port: 192.168.1.11     
 
-## OT - Level
+### OT - Level
   Run Tia tank project on PLC SIM Advanced, or use a real PLC - Use a 1500 plc [Link Tia Portal Project](https://github.com/industrial-edge/miscellaneous#tank-application)  Or use your own project.  
   Give this PLC ip adress in range of the OT-South network, for example 192.168.0.10
+
 
 ## PLANT - Level
 Install the required apps on edge device
@@ -59,7 +70,9 @@ Setup the network settings  on edge device
   - Give the Edge-Device Port 2 ip adress in range of the OT-South network, for example 192.168.0.11
   - Give the Edge-Device Port 1 ip adress in range of the South-North network, for example 192.168.1.10
 
-### Simatic s7 Connector
+# Apps
+
+## Simatic s7 Connector
 1. Open the Industrial Edge Management - Go to Data Connections - Select the Simatic S7 connector
 ![s7connector1](files/edgedevice-s7-connector-1.JPG)
 2. Launch on the Southbound device - select S7 or OPCUA (we use opcua) - add data Source 
@@ -71,7 +84,7 @@ Setup the network settings  on edge device
 ![s7connector3](files/edgedevice-s7-connector-4-browse.JPG)
 6. Deploy and start project, wait until done.
 
-### IE Databus
+## IE Databus
 1. Open the Industrial Edge Management - Go to Data Connections - Select the IE Databus
 2. Launch on the Southbound device 
 3. Add user + 
@@ -79,7 +92,7 @@ Setup the network settings  on edge device
 4. Topic: ie/#, username: edge, password: edge, permission: publish and subscribe, click on add.
 5. Deploy, wait until its done
 
-### Flow Creator
+## Flow Creator
 1. open flow creator - on edge device, login with edge credentials 
 2. add mqtt in node
 3. add server: 
@@ -97,7 +110,7 @@ Setup the network settings  on edge device
 ![flowcreator2](files/edgedevice-flow-creator-2.JPG)
 
 
-### Edgedevice - Dataservice 
+## Edgedevice - Dataservice 
 1. Open Dataservice - on edge device.
 2. Go set the adapter, connect the s7 adapter
 ![Dataservice](files/edgedevice-dataservice-1.JPG)
@@ -117,7 +130,7 @@ Setup the network settings  on edge device
 10. Select all the 4 tags. and save. > accept.
 
 
-### Edgedevice - Energy Manager
+## Edgedevice - Energy Manager
 1. Open Energy manager - on edge device
 2. Create KPIs - add new KPI
 
