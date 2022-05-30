@@ -1,4 +1,4 @@
-# Northbound southbound edge devices
+# Energy Manager Setup manual
 Setting up Energy manager on Industrial Edge Device
 [Official documentation](https://github.com/industrial-edge/energy-manager-getting-started)
 
