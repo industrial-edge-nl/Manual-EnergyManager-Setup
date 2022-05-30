@@ -15,6 +15,7 @@ Setting up Energy manager on Industrial Edge Device
     * [IE databus](#ie-databus)
     * [Flow Creator](#flow-creator)
     * [Energy Manager](#energy-manager)
+      * [Heatmap](#heatmap) 
 
 
 ## Overview
@@ -160,7 +161,7 @@ Setup the network settings  on edge device
    - go to the Energy - Asset
    - click on the dropdown and click on parameter
 
-![EnergyManager4](files/energymanager-7.JPG)
+![EnergyManager5](files/energymanager-7.JPG)
 
    - add new KPI instance
    - name: INSTANCE_Total_Energy
@@ -170,16 +171,19 @@ Setup the network settings  on edge device
    - Connect EnergyHeatingTank -> ConsumptionHeatingTank
    - Connect EnergyFillingBottles -> ConsumptionFillingBottles
 
-   ![EnergyManager4](files/energymanager-8.JPG)
+   ![EnergyManager6](files/energymanager-8.JPG)
 
 3. Open menu > My Plant
     - open tab > Plant > Energy> create dashboard
     - give it a name.
 
-![EnergyManager4](files/energymanager-5.JPG)
+![EnergyManager7](files/energymanager-5.JPG)
 
+### Heatmap
 4. Heatmap Option 1
-    - select the tab "My Plant"
+Using the Heatmap, you can visualize the intensity of data values over time.
+
+    - select the tab "Plant"
     - go to the newly created dashboard
     - select "Create first widget" to start the wizard
         - choose the Heatmap widget type > Continue
@@ -188,5 +192,83 @@ Setup the network settings  on edge device
         - no need to change anything in the general display options > Continue
         - no need to change anything in the Heatmap display options > Finish
 
-![EnergyManager4](files/energymanager-6.JPG)
+![EnergyManager8](files/energymanager-6.JPG)
 
+### Bulk Diagram
+
+5. Diagram Option 2
+Using the Diagram widget, you can display parameter values or calculated KPI values over time. There are several diagram types available. Also different aggregation functions can be selected for the values.
+
+  - go to the dashboard
+  - click the settings button and choose "New widget" to start the wizard
+    - choose the Diagram widget type > Continue
+    - enter a widget name and set the KPI calculation period to 15 Minutes > Continue
+    - click "Select parameter" and choose the KPI instance for 'Total energy' > Continue
+    - no need to change anything in the general display options > Continue
+    - choose "Bar" in the dropdown field for the chart type > Finish
+
+![EnergyManager9](files/energymanager-9.JPG)
+
+### Line Diagram
+
+6. Line Diagram Option 3
+Here we want to display the consumption costs for energy and water as line diagram
+
+  - go to the dashboard
+  - click the settings button and choose "New widget" to start the wizard
+    - choose the Diagram widget type > Continue
+    - enter a widget name and set the KPI calculation period to 15 Minutes > Continue
+    - click "New KPI instance" to create an instance based on the KPI type 'Costs energy', enter a name, select the KPI type and link the parameter 'TotalEnergy' to the already existing instance of 'Total Energy'
+
+![EnergyManager10](files/energymanager-10.JPG)
+
+    - Again click "New KPI instance" to create an instance based on the KPI type 'Costs water', enter a name, select the KPI type and link the parameter 'WaterConsumption' to the signal 'waterConsumptionFillingTank' with aggregation 'Last' > Continue
+
+![EnergyManager11](files/energymanager-11.JPG)
+
+    - no need to change anything in the general display options > Continue
+    - no need to change anything in the Chart display options > Finish
+
+![EnergyManager12](files/energymanager-12.JPG)
+
+
+### Sankey Diagram
+
+7. Sankey Diagram Option 4
+Using the Sankey diagram, energy flows can be visualized.
+
+  - go to the dashboard
+  - click the settings button and choose "New widget" to start the wizard
+      - choose the Sankey widget type > Continue
+      - enter a widget name and set the KPI calculation period to 1 Minute > Continue
+      - click "Select parameter" and choose the energy and water parameter (hint: choose them in the order you would like to see them in the diagram), for all set aggregation to 'Last' > Continue
+
+![EnergyManager13](files/energymanager-13.JPG)
+
+      - no need to change anything in the general display options > Continue
+      - in the tab 'Nodes' you need to create nodes with proper colours, that are later linked to the parameter:
+
+![EnergyManager14](files/energymanager-14.JPG)
+
+      - go to the tab 'Links' and specify the links for each parameter from source node to destination node (you can also scale a link to show the proportions right):
+
+![EnergyManager15](files/energymanager-15.JPG)
+
+      - finish
+
+![EnergyManager16](files/energymanager-16.JPG)
+
+### Duration curve Diagram
+
+8. Duration Curve Diagram Option 5
+By using the duration curve, you can display a chart sorted by size.
+
+  - go to the dashboard
+  - click the settings button and choose "New widget" to start the wizard
+    - choose the Duration Curve widget type > Continue
+    - enter a widget name and set the KPI calculation period to 1 Minute > Continue
+    - click "Select parameter" and choose the KPI instance for 'Total energy' > Continue
+    - no need to change anything in the general display options > Continue
+    - no need to change anything in the Heatmap display options > Finish
+
+![EnergyManager17](files/energymanager-17.JPG)
