@@ -16,6 +16,11 @@ Setting up Energy manager on Industrial Edge Device
     * [Flow Creator](#flow-creator)
     * [Energy Manager](#energy-manager)
       * [Heatmap](#heatmap) 
+      * [Bulk Diagram](#bulk-diagram) 
+      * [Line Diagram](#line-diagram) 
+      * [Sankey Diagram](#sankey-diagram) 
+      * [Duration curve Diagram](#duration-curve-diagram) 
+
 
 
 ## Overview
