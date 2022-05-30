@@ -59,12 +59,12 @@ Setting up Energy manager on Industrial Edge Device
     - MYPC :
       - port: 192.168.1.11     
 
-### OT - Level
+### OT Level
   Run Tia tank project on PLC SIM Advanced, or use a real PLC - Use a 1500 plc [Link Tia Portal Project](https://github.com/industrial-edge/miscellaneous#tank-application)  Or use your own project.  
   Give this PLC ip adress in range of the OT-South network, for example 192.168.0.10
 
 
-## PLANT - Level
+## PLANT Level
 Install the required apps on edge device
 - Simatic s7 Connector 
 - IE Databus 
@@ -116,7 +116,7 @@ Setup the network settings  on edge device
 ![flowcreator2](files/edgedevice-flow-creator-2.JPG)
 
 
-## Edgedevice - Dataservice 
+## Dataservice 
 1. Open Dataservice - on edge device.
 2. Go set the adapter, connect the s7 adapter
 ![Dataservice](files/edgedevice-dataservice-1.JPG)
@@ -136,7 +136,7 @@ Setup the network settings  on edge device
 10. Select all the 4 tags. and save. > accept.
 
 
-## Edgedevice - Energy Manager
+## Energy Manager
 1. Open Energy manager - on edge device
 2. Create KPIs - add new KPI
 
